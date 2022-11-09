@@ -10,12 +10,16 @@ jobs:
     - name: ssh to server and running cmds
       uses: appleboy/ssh-action@v0.1.5
       with:
-        host: 3.19.75.90
-        username: ec2-user
+        host: 10.1.6.26
+        username: root
+        password: '@rr!sPor7al'
         key: ${{ secrets.TESTPULL_SECRET }}
         port: 22
+        proxy_host: spwifi-vpn.arrisi.com
+        proxy_username: wibip
+        proxy_password: wibip123456
         script: |
-          cd /home/ec2-user/testgit
+          cd /var/www/html/testpull
           git pull origin testpush
           git status
         
