@@ -1,0 +1,23 @@
+name: test workflow
+on:
+  push:
+    branches: [testpush]
+jobs:
+  jobone:
+    name: deployment on remote server
+    runs-on: ubuntu-latest
+    steps:
+    - name: ssh to server and running cmds
+      used: appleboy/ssh-action@testpush
+      with:
+        host: 3.19.75.90
+        username: ec2-ser
+        key: ${{ secrets.TESTPULL_SECRET }}
+        port: 22
+        script: |
+          cd /home/ec2-user/testgit
+          git pull origin testpush
+          git status
+        
+        
+        
