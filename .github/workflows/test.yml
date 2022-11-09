@@ -11,7 +11,7 @@ jobs:
       uses: appleboy/ssh-action@v0.1.5
       with:
         host: 3.19.75.90
-        username: ec2-ser
+        username: ec2-user
         key: ${{ secrets.TESTPULL_SECRET }}
         port: 22
         script: |
