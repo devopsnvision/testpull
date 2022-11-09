@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: ssh to server and running cmds
-      used: appleboy/ssh-action@testpush
+      uses: appleboy/ssh-action@testpush
       with:
         host: 3.19.75.90
         username: ec2-ser
